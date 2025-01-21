@@ -16,9 +16,11 @@ services:
       restart: always
       shm_size: 128mb
       env_file:
-        - .env.docker
+        - .template.env.docker
       volumes:
         - db:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
 
 volumes:
   db:
