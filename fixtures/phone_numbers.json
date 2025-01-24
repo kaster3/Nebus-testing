@@ -1,0 +1,22 @@
+[
+    {"number": "79112345678", "organization_id": 1},
+    {"number": "79112345679", "organization_id": 1},
+    {"number": "79212345680", "organization_id": 2},
+    {"number": "79212345681", "organization_id": 2},
+    {"number": "79312345682", "organization_id": 3},
+    {"number": "79312345683", "organization_id": 3},
+    {"number": "79412345684", "organization_id": 4},
+    {"number": "79412345685", "organization_id": 4},
+    {"number": "79512345686", "organization_id": 5},
+    {"number": "79512345687", "organization_id": 5},
+    {"number": "79612345688", "organization_id": 6},
+    {"number": "79612345689", "organization_id": 6},
+    {"number": "79712345690", "organization_id": 7},
+    {"number": "79712345691", "organization_id": 7},
+    {"number": "79812345692", "organization_id": 8},
+    {"number": "79812345693", "organization_id": 8},
+    {"number": "79912345694", "organization_id": 9},
+    {"number": "79912345695", "organization_id": 9},
+    {"number": "79012345696", "organization_id": 10},
+    {"number": "79012345697", "organization_id": 10}
+]

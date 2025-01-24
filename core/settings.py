@@ -68,6 +68,7 @@ class Settings(BaseSettings):
     db: DataBase
     logging: LoggingConfig
     api: ApiPrefix = ApiPrefix()
+    x_api_key: str
 
 
 settings = Settings()

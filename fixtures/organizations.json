@@ -1,0 +1,21 @@
+[
+    {"name": "Инновационные Решения", "building_id": 1},
+    {"name": "Технологии Будущего", "building_id": 2},
+    {"name": "Глобальные Стратегии", "building_id": 3},
+    {"name": "Эко-Проект", "building_id": 1},
+    {"name": "Диджитал Лаборатория", "building_id": 4},
+    {"name": "Зеленая Планета", "building_id": 2},
+    {"name": "Новые Горизонты", "building_id": 5},
+    {"name": "Прогресс и Развитие", "building_id": 3},
+    {"name": "Решения для Бизнеса", "building_id": 1},
+    {"name": "Будущее на Доставке", "building_id": 6},
+    {"name": "Цифровая Эволюция", "building_id": 7},
+    {"name": "Генерация Идей", "building_id": 4},
+    {"name": "Финансовые Технологии", "building_id": 8},
+    {"name": "Стартап Мечты", "building_id": 9},
+    {"name": "Город Умных Технологий", "building_id": 2},
+    {"name": "Развитие Мегаполисов", "building_id": 5},
+    {"name": "Интернет-Революция", "building_id": 3},
+    {"name": "Сеть Бизнес-Идей", "building_id": 10},
+    {"name": "Академия Прогресса", "building_id": 10}
+]
