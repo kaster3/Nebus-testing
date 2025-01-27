@@ -18,17 +18,10 @@ async def lifespan(app: FastAPI):
         level=logging.INFO,
         format=settings.logging.log_format,
     )
-    try:
-        async with db_helper.engine.begin() as connection:
-            await connection.run_sync(Base.metadata.create_all)
-        async for session in db_helper.session_getter():
-            await load_fixtures(session)
-        logging.info("Application starts successfully!")
-        yield
-        logging.info("Application ends successfully!")
-    finally:
-        async with db_helper.engine.begin() as connection:
-            await connection.run_sync(Base.metadata.drop_all)
+    logging.info("Application starts successfully!")
+    yield
+    logging.info("Application ends successfully!")
+
 
 
 application = FastAPI(

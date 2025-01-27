@@ -1,10 +1,12 @@
+import asyncio
 import json
+import sys
 from pathlib import Path
 
 from sqlalchemy.ext.asyncio import AsyncSession
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from core import settings
-from core.database.db_helper import DataBaseHelper
+from core.database.db_helper import db_helper
 from core.database.models import (
     Activity,
     Organization,
@@ -35,11 +37,11 @@ async def load_fixtures(session: AsyncSession) -> None:
         await session.commit()
 
 
+async def main() -> None:
+    async for session in db_helper.session_getter():
+        await load_fixtures(session)
+
+
 if __name__ == "__main__":
-    db_helper = DataBaseHelper(
-        url=str(settings.db.url),
-        echo=settings.db.echo,
-        echo_pool=settings.db.echo_pool,
-        pool_size=settings.db.pool_size,
-        max_overflow=settings.db.max_overflow,
-    )
+    asyncio.run(main())
+
