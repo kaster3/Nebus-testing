@@ -17,11 +17,10 @@ async def get_sub_activities(
 ) -> list[Activity]:
     if current_depth >= max_depth:
         return []
-    await session.refresh(activity, ["children"])  # Явно обновляем атрибут
+    await session.refresh(activity, ["children"])
     children = activity.children
     sub_activities = children
     for child in children:
-        print(child, current_depth + 1)
         sub_activities += await get_sub_activities(
             session=session, activity=child, current_depth=current_depth + 1
         )

@@ -3,8 +3,8 @@ from fastapi.security import APIKeyHeader
 
 from core import settings
 
-
 api_key_header = APIKeyHeader(name="x-auth-token", auto_error=False)
+
 
 def static_auth_token(
     api_key: str = Security(api_key_header),

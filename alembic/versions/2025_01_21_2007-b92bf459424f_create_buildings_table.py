@@ -1,16 +1,16 @@
 """create buildings table
 
 Revision ID: b92bf459424f
-Revises: 
+Revises:
 Create Date: 2025-01-21 20:07:00.808853
 
 """
 
 from typing import Sequence, Union
 
-from alembic import op
 import sqlalchemy as sa
 
+from alembic import op
 
 revision: str = "b92bf459424f"
 down_revision: Union[str, None] = None

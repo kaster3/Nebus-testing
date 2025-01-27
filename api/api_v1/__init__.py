@@ -8,7 +8,7 @@ router = APIRouter(
     prefix=settings.api.v1.prefix,
 )
 
-for rout in (organization_router, ):
+for rout in (organization_router,):
     router.include_router(
         router=rout,
     )

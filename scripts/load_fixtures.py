@@ -13,7 +13,6 @@ from core.database.models import (
 )
 from core.database.models.buildings import Building
 
-
 FIXTURES_DIR = Path(__file__).resolve().parent.parent / "fixtures"
 
 

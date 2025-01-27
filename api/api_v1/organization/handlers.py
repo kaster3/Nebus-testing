@@ -12,7 +12,7 @@ from .dependencies import (
     get_organizations,
 )
 from .repository import OrganizationRepository
-from .schemas import OrganizationBaseSchema, OrganizationSchema
+from .schemas import OrganizationSchema
 
 router = APIRouter(
     prefix="/organizations",
@@ -48,7 +48,7 @@ async def get_organizations_by_activity(
 
 @router.get(
     "/radius",
-    response_model=list[OrganizationBaseSchema],
+    response_model=list[OrganizationSchema],
     status_code=status.HTTP_200_OK,
     dependencies=[Depends(static_auth_token)],
 )
@@ -68,7 +68,7 @@ async def get_organizations_radius(
 
 @router.get(
     "/rectangle",
-    response_model=list[OrganizationBaseSchema],
+    response_model=list[OrganizationSchema],
     status_code=status.HTTP_200_OK,
     dependencies=[Depends(static_auth_token)],
 )
@@ -90,7 +90,7 @@ async def get_organizations_rectangle(
 
 @router.get(
     "/by_activity_with_sub",
-    response_model=list[OrganizationBaseSchema],
+    response_model=list[OrganizationSchema],
     status_code=status.HTTP_200_OK,
     dependencies=[Depends(static_auth_token)],
 )

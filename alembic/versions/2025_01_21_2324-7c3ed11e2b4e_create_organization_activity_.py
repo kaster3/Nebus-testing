@@ -8,9 +8,9 @@ Create Date: 2025-01-21 23:24:01.199384
 
 from typing import Sequence, Union
 
-from alembic import op
 import sqlalchemy as sa
 
+from alembic import op
 
 # revision identifiers, used by Alembic.
 revision: str = "7c3ed11e2b4e"
@@ -28,20 +28,14 @@ def upgrade() -> None:
         sa.ForeignKeyConstraint(
             ["activity_id"],
             ["activities.id"],
-            name=op.f(
-                "fk_organization_activity_association_activity_id_activities"
-            ),
+            name=op.f("fk_organization_activity_association_activity_id_activities"),
         ),
         sa.ForeignKeyConstraint(
             ["organization_id"],
             ["organizations.id"],
-            name=op.f(
-                "fk_organization_activity_association_organization_id_organizations"
-            ),
+            name=op.f("fk_organization_activity_association_organization_id_organizations"),
         ),
-        sa.PrimaryKeyConstraint(
-            "id", name=op.f("pk_organization_activity_association")
-        ),
+        sa.PrimaryKeyConstraint("id", name=op.f("pk_organization_activity_association")),
         sa.UniqueConstraint(
             "organization_id",
             "activity_id",

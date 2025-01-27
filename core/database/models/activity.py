@@ -19,6 +19,7 @@ class Activity(IntIdPkMixin, Base):
     organizations: Mapped[list["Organization"]] = relationship(
         back_populates="activities",
         secondary="organization_activity_association",
+        lazy="selectin",
     )
 
     def __repr__(self):

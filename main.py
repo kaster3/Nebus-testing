@@ -40,6 +40,7 @@ application.include_router(
     router=api_router,
 )
 
+
 def main() -> None:
     uvicorn.run(
         app=settings.conf.app,

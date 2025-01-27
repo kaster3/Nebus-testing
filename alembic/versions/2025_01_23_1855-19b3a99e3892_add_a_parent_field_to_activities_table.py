@@ -8,9 +8,9 @@ Create Date: 2025-01-23 18:55:25.578203
 
 from typing import Sequence, Union
 
-from alembic import op
 import sqlalchemy as sa
 
+from alembic import op
 
 # revision identifiers, used by Alembic.
 revision: str = "19b3a99e3892"
@@ -20,9 +20,7 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "activities", sa.Column("parent_id", sa.Integer(), nullable=True)
-    )
+    op.add_column("activities", sa.Column("parent_id", sa.Integer(), nullable=True))
     op.create_foreign_key(
         op.f("fk_activities_parent_id_activities"),
         "activities",

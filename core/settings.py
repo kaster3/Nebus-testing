@@ -3,6 +3,8 @@ from typing import Literal
 from pydantic import BaseModel, PostgresDsn
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+EARTH_RADIUS_KM = 6371
+
 
 class ApiV1Prefix(BaseModel):
     prefix: str = "/v1"

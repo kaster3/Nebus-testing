@@ -19,15 +19,21 @@ class Organization(IntIdPkMixin, Base):
         Integer, ForeignKey("buildings.id", ondelete="CASCADE")
     )
 
-    building: Mapped["Building"] = relationship("Building", back_populates="organizations")
+    building: Mapped["Building"] = relationship(
+        "Building",
+        back_populates="organizations",
+        lazy="selectin",
+    )
 
     phone_numbers: Mapped[list["PhoneNumber"]] = relationship(
-        "PhoneNumber", back_populates="organization"
+        "PhoneNumber",
+        back_populates="organization",
     )
 
     activities: Mapped[list["Activity"]] = relationship(
         back_populates="organizations",
         secondary="organization_activity_association",
+        lazy="selectin",
     )
 
     def __repr__(self):

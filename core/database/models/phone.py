@@ -18,7 +18,8 @@ class PhoneNumber(IntIdPkMixin, Base):
     )
 
     organization: Mapped["Organization"] = relationship(
-        "Organization", back_populates="phone_numbers"
+        "Organization",
+        back_populates="phone_numbers",
     )
 
     def __repr__(self):

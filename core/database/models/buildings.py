@@ -19,7 +19,9 @@ class Building(IntIdPkMixin, Base):
     longitude: Mapped[float | None]
 
     organizations: Mapped[list["Organization"]] = relationship(
-        "Organization", back_populates="building"
+        "Organization",
+        back_populates="building",
+        lazy="selectin",
     )
 
     def __repr__(self):

@@ -3,13 +3,13 @@ from typing import Annotated
 from fastapi import Depends, HTTPException, Path
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from api.api_v1.activity.dependencies import get_activity_repository
 from api.api_v1.activity.repository import ActivityRepository
+from api.api_v1.buildings.dependencies import get_building_repository
 from api.api_v1.buildings.repository import BuildingRepository
 from core.database.db_helper import db_helper
 from core.database.models import Activity, Building
 
-from ..activity.dependencies import get_activity_repository
-from ..buildings.dependencies import get_building_repository
 from .repository import OrganizationRepository
 from .schemas import OrganizationSchema
 
@@ -26,9 +26,9 @@ async def get_organizations(
 ) -> OrganizationSchema | None:
 
     if organization_data.isdigit():
-        organization = await repo.get_organizations_by_id(organization_id=int(organization_data))
+        organization = await repo.get_organization_by_id(organization_id=int(organization_data))
     else:
-        organization = await repo.get_organizations_by_name(organization_name=organization_data)
+        organization = await repo.get_organization_by_name(organization_name=organization_data)
     if organization is not None:
         return organization
     raise HTTPException(status_code=404, detail="Organization not found")
